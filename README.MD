@@ -1,3 +1,13 @@
+<p align="center">
+  <img alt="DoWhile" src="./src/assets/seal.svg" width="48px">
+</p>
+
+<h1 align="center">
+    <img alt="DoWhile" src=".github/images/Capa.png" width="800px"/>
+</h1>
+
+<br>
+
 ## Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
