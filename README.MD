@@ -2,22 +2,10 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-<a href="https://en.reactjs.org/" style="display: flex; align-items: center;gap: 5px">
-  <img src="./.github/images/react.svg" width="24" height="24"/>
-  <p>ReactJS</p>
-</a>
-<a href="https://socket.io/" style="display: flex; align-items: center;gap: 5px">
-  <img src="https://socket.io/images/logo.svg" width="24" height="24" />
-  <p>SokectIo</p>
-</a>
-<a href="https://vitejs.dev/" style="display: flex; align-items: center;gap: 5px">
-  <img src="https://vitejs.dev/logo.svg" width="24" height="24" />
-  <p>Vite</p>
-</a>
-<a href="https://www.typescriptlang.org/" style="display: flex; align-items: center;gap: 5px">
-  <img src="https://www.typescriptlang.org/icons/icon-512x512.png?v=8944a05a8b601855de116c8a56d3b3ae" width="24" height="24"/>
-  <p>TypeScript</p>
-</a>
+[![Reacjs Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://en.reactjs.org/)
+[![SokectIo Badge](https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white)](https://socket.io/)
+[![Vite Badge](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+[![Typescript Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 ## Como executar
 
