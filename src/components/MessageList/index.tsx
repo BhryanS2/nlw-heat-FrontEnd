@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { io } from "socket.io-client";
+
 import { api } from "../../services/api";
 
 import logoImg from "../../assets/logo.svg";
@@ -14,8 +16,25 @@ interface Message {
 	};
 }
 
+const messageQueue: Message[] = [];
+
+const socket = io("http://localhost:8000");
+socket.on("new_message", (message: Message) => {
+	if (message) messageQueue.push(message);
+});
+
 export function MessageList() {
 	const [messages, setMessages] = useState<Message[]>([]);
+	useEffect(() => {
+		setInterval(() => {
+			if (messageQueue.length > 0) {
+				setMessages((prevState) =>
+					[messageQueue[0], prevState[0], prevState[1]].filter(Boolean),
+				);
+				messageQueue.shift();
+			}
+		}, 3000);
+	}, []);
 	useEffect(() => {
 		async function loadMessages() {
 			const { data } = await api.get<Message[]>("/message/last3");
@@ -27,8 +46,8 @@ export function MessageList() {
 		<div className={styles.messageListWrapper}>
 			<img src={logoImg} alt="DoWhile 2021" />
 			<ul className={styles.messageList}>
-				{messages.map((message) => (
-					<li className={styles.message} key={message.id}>
+				{messages.map((message, index) => (
+					<li className={styles.message} key={message.id + String(index)}>
 						<p className={styles.messageItem}>{message.text}</p>
 						<div className={styles.messageUser}>
 							<div className={styles.userImage}>
