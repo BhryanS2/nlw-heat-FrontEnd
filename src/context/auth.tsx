@@ -49,7 +49,6 @@ export function AuthProvider(props: AuthProvider) {
 			client,
 			secret,
 		});
-		console.log("data" + data);
 		const { token, user } = data;
 		localStorage.setItem("DoWhileToken", token);
 
