@@ -42,9 +42,14 @@ export function AuthProvider(props: AuthProvider) {
 	}
 
 	async function signIn(code: string) {
+		const client = import.meta.env.VITE_GITHUB_CLIENT_ID;
+		const secret = import.meta.env.VITE_GITHUB_CLIENT_SECRET;
 		const { data } = await api.post<AuthResponse>("authenticate", {
 			code,
+			client,
+			secret,
 		});
+		console.log("data" + data);
 		const { token, user } = data;
 		localStorage.setItem("DoWhileToken", token);
 
