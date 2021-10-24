@@ -17,8 +17,8 @@ interface Message {
 }
 
 const messageQueue: Message[] = [];
-
-const socket = io("http://localhost:8000");
+const url = import.meta.env.VITE_PRODUTION_URL;
+const socket = io(typeof url === "string" ? url : "http://localhost:8000");
 socket.on("new_message", (message: Message) => {
 	if (message) messageQueue.push(message);
 });
